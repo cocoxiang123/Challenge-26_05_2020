@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    var hash = {}
+    var nums = [...nums];
+    if(nums.length <=1){
+        return false;
+    }
+    nums.forEach(x=>hash[x]?hash[x]++:hash[x]=1)
+    for(var i=0;i<nums.length;i++){
+        if(hash[nums[i]]>1){
+            return true
+        }
+        if(i==nums.length){
+            return false
+        }
+    }
+    return false
+};
